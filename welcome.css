@@ -1,4 +1,4 @@
-/* ===== RESET ===== */
+ /* ===== RESET ===== */
 html, body {
   width: 100%;
   height: 100%;
@@ -31,7 +31,7 @@ html, body {
 
 /* ===== BODY BACKGROUND ===== */
 body {
-  background-image: url("New_folder/WhatsApp Image 2026-01-12 at 5.12.09 PM.jpeg");
+ 
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -40,12 +40,22 @@ body {
 }
 
 /* الموبايل */
-@media (max-width: 150px) {
+@media (max-width: 600px) {
   body {
     background-size: contain;
   }
 }
 
+.hero-image {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* ✅ الصورة كاملة بدون قص */
+  object-position: center;
+  background-color: #000; /* خلفية سوداء إذا ظهرت فراغات */
+  z-index: -2;
+}
 
 /* ===== OVERLAY ===== */
 .overlay {
