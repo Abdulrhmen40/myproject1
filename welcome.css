@@ -31,12 +31,21 @@ html, body {
 
 /* ===== BODY BACKGROUND ===== */
 body {
-  background-image: url("New_folder/WhatsApp Image 2026-01-12 at 5.14.44 PM.jpeg");
-  background-size: cover;
-  background-position: center;
+  background-image: url("New_folder/WhatsApp Image 2026-01-12 at 5.12.09 PM.jpeg");
   background-repeat: no-repeat;
-  overflow: hidden;
+  background-position: center;
+  background-size: cover;
+  background-color: #000;
+  min-height: 100vh;
 }
+
+/* الموبايل */
+@media (max-width: 768px) {
+  body {
+    background-size: contain;
+  }
+}
+
 
 /* ===== OVERLAY ===== */
 .overlay {
@@ -68,21 +77,21 @@ canvas {
 }
 
 .content h1 {
-  font-size: 70px;
-  margin-bottom: 10px;
+  font-size: clamp(24px, 6vw, 70px);
 }
+
 .content p {
-  font-size: 70px;
-  margin-bottom: 25px;
+  font-size: clamp(20px, 5vw, 70px);
 }
+
 
 /* ===== BUTTON ===== */
 .content button {
   background: linear-gradient(135deg,#ff00f2,#ff2f00);
   border: none;
-  padding: 14px 35px;
+  padding: clamp(10px, 3vw, 14px) clamp(22px, 5vw, 35px);
   border-radius: 30px;
-  font-size: 60px;
+  font-size: clamp(18px, 4vw, 60px);;
   color: #fff;
   cursor: pointer;
   box-shadow: 0 0 25px rgba(255, 0, 98, 0.7);
