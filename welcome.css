@@ -40,7 +40,7 @@ body {
 }
 
 /* الموبايل */
-@media (max-width: 768px) {
+@media (max-width: 150px) {
   body {
     background-size: contain;
   }
