@@ -1,0 +1,1015 @@
+/* ==================== Reset & Body ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  direction: rtl;
+  background: url('New folder/WhatsApp Image 2025-12-24 at 8.41.55 PM.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+
+/* ==================== Header ==================== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: linear-gradient(90deg, rgba(11,116,218,0.95), rgba(58,176,255,0.95));
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  animation: slideDown 0.8s ease;
+}
+
+.logo-img {
+  width: 40px;        /* حجم الشعار */
+  height: 40px;       /* ارتفاع الشعار */
+  margin-right: 10px; /* مسافة بين الشعار والنص */
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  font-family: 'Cairo', sans-serif;
+  cursor: pointer;
+}
+
+.nav {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-item a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255,255,255,0.1);
+  padding: 8px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.nav-item a:hover {
+  background: rgba(255,255,255,0.3);
+  transform: scale(1.1);
+}
+
+.nav-item svg {
+  width: 28px;
+  height: 28px;
+  fill: white;
+  transition: fill 0.3s, transform 0.3s;
+}
+
+.nav-item a:hover svg {
+  fill: #ffd700; /* ذهبي عند Hover */
+  transform: rotate(15deg);
+}
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  bottom: -25px;
+  background: #0b74da;
+  color: white;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 5px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.nav-item:hover .tooltip {
+  opacity: 1;
+  bottom: -35px;
+}
+
+/* ==================== Animations ==================== */
+@keyframes slideDown {
+  0% { opacity: 0; transform: translateY(-20px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav {
+    gap: 15px;
+  }
+  .logo {
+    font-size: 20px;
+  }
+}
+
+/* ==================== Hero Section ==================== */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 20px;
+  background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
+              url('New folder/جمعية شوارق الأمل_20251022_063401_0000 (1).png') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 1200px;
+  gap: 40px;
+}
+
+.hero-image-wrapper {
+  flex: 1;
+  min-width: 320px;
+}
+
+.hero-image {
+  width: 100%;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.hero-image:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 320px;
+  text-align: right;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  color: #0b42f8;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 20px;
+  color: #333;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+/* Hero Button */
+.btn-primary {
+  display: inline-block;
+  background: #0b74da;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 14px 28px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+.btn-primary:hover {
+  background: #0b42f8;
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* ==================== Latest Activities ==================== */
+.latest-activities {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.latest-activities h2 {
+  font-size: 42px;
+  color: #0b42f8;
+  margin-bottom: 50px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.activity-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.activity-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+}
+
+.activity-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.5s, filter 0.5s;
+}
+
+.activity-card img:hover {
+  transform: scale(1.07);
+  filter: brightness(1.1);
+}
+
+.activity-card h3 {
+  font-size: 24px;
+  color: #0b74da;
+  margin: 15px 0 10px;
+}
+
+.activity-card p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 15px;
+  padding: 0 15px;
+}
+
+.btn-link {
+  display: inline-block;
+  color: #0b74da;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+  margin-bottom: 15px;
+}
+
+.btn-link:hover {
+  text-decoration: underline;
+  color: #0b42f8;
+}
+
+/* ==================== Animations ==================== */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(40px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width: 900px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+}
+
+/* ==================== About Hero ==================== */
+.about-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 20px;
+  background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)),
+              url('New folder/WhatsApp Image 2025-12-07 at 8.54.20 AM.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-hero-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 1200px;
+  gap: 40px;
+}
+
+.about-hero-image-wrapper {
+  flex: 1;
+  min-width: 320px;
+}
+
+.about-hero-image {
+  width: 100%;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.about-hero-image:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.about-hero-content {
+  flex: 1;
+  min-width: 320px;
+  text-align: right;
+  animation: fadeInRight 1s ease forwards;
+}
+
+.about-hero-content h1 {
+  font-size: 48px;
+  color: #0b42f8;
+  font-weight: 900;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+.about-hero-content p {
+  font-size: 18px;
+  color: #333;
+  line-height: 2;
+  margin-bottom: 20px;
+}
+
+.about-hero-content ul {
+  list-style: disc;
+  padding-right: 20px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #555;
+}
+
+.about-hero-content ul li {
+  margin-bottom: 10px;
+}
+
+/* ==================== Animations ==================== */
+@keyframes fadeInRight {
+  0% { opacity: 0; transform: translateX(50px);}
+  100% { opacity: 1; transform: translateX(0);}
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width: 900px) {
+  .about-hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-hero-content {
+    text-align: center;
+  }
+
+  .about-hero-content ul {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+
+/* ==================== About Section ==================== */
+.about-vision-section {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: auto;
+  background: linear-gradient(145deg, #f5f7ff, #e9eefc);
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  font-family: "Cairo", "Arial", sans-serif;
+}
+
+.about-section-title {
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 60px;
+  color: #0b42f8;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.about-vision-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.about-card {
+  flex: 1;
+  min-width: 320px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.about-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+}
+
+.about-icon {
+  font-size: 55px;
+  text-align: center;
+  margin-top: 20px;
+  animation: bounce 1s infinite alternate;
+}
+
+.about-activity-card img {
+  width: 100%;
+  height: 220px;
+  border-radius: 15px;
+  object-fit: cover;
+  transition: transform 0.5s, filter 0.5s;
+}
+
+.about-activity-card img:hover {
+  transform: scale(1.07);
+  filter: brightness(1.1);
+}
+
+.about-activity-card h2 {
+  font-size: 28px;
+  color: #0b74da;
+  margin: 20px 0 15px;
+  text-align: center;
+  position: relative;
+}
+
+.about-activity-card h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #0b74da;
+  margin: 8px auto 0;
+  border-radius: 2px;
+  transition: width 0.3s;
+}
+
+.about-activity-card h2:hover::after {
+  width: 100px;
+}
+
+.about-activity-card p,
+.about-activity-card ul {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.8;
+  text-align: right;
+  padding: 0 20px 20px;
+}
+
+.about-activity-card ul {
+  list-style-type: disc;
+  padding-right: 30px;
+}
+
+/* ==================== Animations ==================== */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+@media (max-width: 900px) {
+  .about-vision-cards {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .about-section-title {
+    font-size: 36px;
+  }
+}
+
+/* ==================== Activities Hero ==================== */
+.activities-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 20px;
+  background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)),
+              url('New folder/WhatsApp Image 2025-12-30 at 8.50.42 AM.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+.activities-hero-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 1200px;
+  gap: 40px;
+}
+
+.activities-hero-image-wrapper {
+  flex: 1;
+  min-width: 320px;
+}
+
+.activities-hero-image {
+  width: 100%;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.activities-hero-image:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.activities-hero-content {
+  flex: 1;
+  min-width: 320px;
+  text-align: right;
+  animation: fadeInLeft 1s ease forwards;
+}
+
+.activities-hero-content h1 {
+  font-size: 48px;
+  color: #0b42f8;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.activities-hero-content p {
+  font-size: 20px;
+  color: #333;
+  line-height: 2;
+  margin-bottom: 20px;
+}
+
+.activities-hero-content .btn-primary {
+  padding: 12px 25px;
+  background-color: #0b74da;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.activities-hero-content .btn-primary:hover {
+  transform: scale(1.05);
+  background-color: #094bb0;
+}
+
+/* ==================== Activities Grid ==================== */
+.activities-activities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 80px 20px;
+}
+
+.activities-activity-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  transition: transform 0.3s, box-shadow 0.3s;
+  padding-bottom: 20px;
+}
+
+.activities-activity-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+}
+
+.activities-activity-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.activities-activity-card img:hover {
+  transform: scale(1.05);
+}
+
+.activities-activity-card h3 {
+  font-size: 22px;
+  margin: 15px 10px 10px;
+  color: #0b42f8;
+}
+
+.activities-activity-card p {
+  padding: 0 15px 15px;
+  color: #555;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.activities-activity-card .btn-link {
+  display: inline-block;
+  margin: 0 15px;
+  color: #0b74da;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.activities-activity-card .btn-link:hover {
+  color: #094bb0;
+  text-decoration: underline;
+}
+
+/* ==================== Animations ==================== */
+@keyframes fadeInLeft {
+  0% { opacity: 0; transform: translateX(-50px);}
+  100% { opacity: 1; transform: translateX(0);}
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width: 900px) {
+  .activities-hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .activities-hero-content {
+    text-align: center;
+  }
+}
+
+/* ==================== Contact Hero ==================== */
+.contact-hero {
+  text-align: center;
+  padding: 80px 20px 40px;
+  background: linear-gradient(135deg, #0b74da, #3ab0ff);
+  color: white;
+  border-radius: 25px;
+  margin: 0 20px 40px;
+}
+
+.contact-hero h1 {
+  font-size: 48px;
+  font-weight: 900;
+  margin-bottom: 15px;
+  animation: fadeInUp 1s ease;
+}
+
+.contact-hero p {
+  font-size: 20px;
+  color: #f0f8ff;
+  animation: fadeInUp 1.2s ease;
+}
+
+/* ==================== Contact Form ==================== */
+.contact-form-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  padding: 40px 20px;
+}
+
+.contact-container {
+  max-width: 600px;
+  flex: 1;
+}
+
+.contact-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  animation: fadeInUp 1s ease;
+}
+
+.contact-container form label {
+  font-weight: bold;
+  color: #0b42f8;
+}
+
+.contact-container form input,
+.contact-container form textarea {
+  padding: 12px 15px;
+  border: 2px solid #0b74da;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.contact-container form input:focus,
+.contact-container form textarea:focus {
+  border-color: #3ab0ff;
+  outline: none;
+  box-shadow: 0 0 10px rgba(11, 116, 218, 0.3);
+}
+
+.contact-btn-submit {
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #0b74da;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-btn-submit:hover {
+  background-color: #3ab0ff;
+  transform: translateY(-3px);
+}
+
+/* ==================== Social Icons ==================== */
+.carr {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.socialContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #0b74da;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.socialContainer:hover {
+  transform: translateY(-5px) scale(1.1);
+  background-color: #3ab0ff;
+}
+
+.socialSvg {
+  width: 28px;
+  height: 28px;
+  fill: white;
+}
+
+/* ==================== Animations ==================== */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width: 900px) {
+  .contact-form-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-hero h1 {
+    font-size: 36px;
+  }
+
+  .contact-hero p {
+    font-size: 18px;
+  }
+}
+
+/* ==================== Social Containers ==================== */
+.socialContainer {
+  width: 52px;
+  height: 52px;
+  background-color: rgb(44, 44, 44);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: 0.3s;
+}
+
+.containerOne:hover { background-color: #f50d75; transform: scale(1.5); border-radius: 15px; }
+.containerTwo:hover { background-color: #00acee; transform: scale(1.5); border-radius: 15px; }
+.containerThree:hover { background-color: #0072b1; transform: scale(1.5); border-radius: 15px; }
+.containerFour:hover { background-color: #25d366; transform: scale(1.5); border-radius: 15px; }
+
+.socialContainer:active { transform: scale(0.9); transition-duration: 0.3s; }
+
+.socialSvg { width: 17px; }
+.socialSvg path { fill: rgb(255, 255, 255); }
+
+.socialContainer:hover .socialSvg {
+  animation: slide-in-top 0.3s both;
+}
+
+@keyframes slide-in-top {
+  0% { transform: translateY(50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* ==================== Filter Buttons ==================== */
+.filter-bar {
+  text-align: center;
+  margin: 50px 0 20px;
+}
+
+.filter-btn {
+  padding: 12px 25px;
+  margin: 0 10px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: #e0e0e0;
+  color: #333;
+  transition: 0.3s;
+}
+
+.filter-btn.active {
+  background-color: #0b74da;
+  color: white;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.filter-btn:hover:not(.active) {
+  background-color: #c0c0c0;
+}
+
+/* ==================== Gallery Hero ==================== */
+.gallery-hero {
+  text-align: center;
+  padding: 80px 20px;
+  background-color: #f2f8ff;
+  border-radius: 25px;
+  margin: 0 20px 50px;
+}
+
+.gallery-hero h1 {
+  font-size: 48px;
+  color: #0b42f8;
+  margin-bottom: 15px;
+  font-weight: 900;
+}
+
+.gallery-hero p {
+  font-size: 20px;
+  color: #555;
+}
+
+/* ==================== Media Grid ==================== */
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 0 20px 80px;
+}
+
+.media-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.media-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+}
+
+.media-card img,
+.media-card video,
+.media-card iframe {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.media-card img:hover,
+.media-card video:hover,
+.media-card iframe:hover {
+  transform: scale(1.05);
+}
+
+.media-card h3 {
+  font-size: 20px;
+  margin: 15px 0 10px;
+  color: #0b42f8;
+  font-weight: bold;
+}
+
+/* Hide videos initially */
+.media-video {
+  display: none;
+}
+
+/* ==================== Animations ==================== */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+
+.media-card {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width: 900px) {
+  .gallery-hero h1 { font-size: 36px; }
+  .gallery-hero p { font-size: 18px; }
+}
+
+
+/* ==================== Footer ==================== */
+/* ==================== Footer ==================== */
+.footer {
+  background: linear-gradient(135deg, #0b74da, #3ab0ff);
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+  animation: fadeInUp 1s ease;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  color: #ffd700; /* لون ذهبي عند المرور */
+  transform: translateY(-3px);
+}
+
+/* Social Icons in Footer (Optional) */
+.footer .footer-social {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.footer .footer-social svg {
+  width: 28px;
+  height: 28px;
+  fill: white;
+  transition: transform 0.3s, fill 0.3s;
+}
+
+.footer .footer-social svg:hover {
+  fill: #ffd700;
+  transform: scale(1.2);
+}
+
+/* ==================== Animations ==================== */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
