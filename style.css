@@ -8,7 +8,7 @@
 body {
   font-family: "Arial", sans-serif;
   direction: rtl;
-  background: url('New folder/WhatsApp Image 2025-12-24 at 8.41.55 PM.jpeg') no-repeat center center fixed;
+  background: url('New_folder/(1)  جمعية شوارق الأمل_20251022_063401_0000 .png') no-repeat center center fixed;
   background-size: cover;
   color: #333;
   scroll-behavior: smooth;
@@ -520,7 +520,7 @@ body {
   align-items: center;
   padding: 100px 20px;
   background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)),
-              url('New folder/WhatsApp Image 2025-12-30 at 8.50.42 AM.jpeg') no-repeat center center fixed;
+              url('New_folder/WhatsApp Image 2025-12-30 at 8.50.42 AM.jpeg') no-repeat center center fixed;
   background-size: cover;
   position: relative;
   overflow: hidden;
@@ -819,7 +819,7 @@ body {
   transition-duration: 0.3s;
 }
 
-.containerOne:hover { background-color: #f50d75; transform: scale(1.5); border-radius: 15px; }
+.containerOne:hover { background-color: #0c0c0c; transform: scale(1.5); border-radius: 15px; }
 .containerTwo:hover { background-color: #00acee; transform: scale(1.5); border-radius: 15px; }
 .containerThree:hover { background-color: #0072b1; transform: scale(1.5); border-radius: 15px; }
 .containerFour:hover { background-color: #25d366; transform: scale(1.5); border-radius: 15px; }
@@ -916,7 +916,7 @@ body {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 2.5s ease;
 }
 
 .media-card img:hover,

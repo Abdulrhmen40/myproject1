@@ -1,26 +1,85 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>مرحباً بك</title>
-  <link rel="stylesheet" href="welcome.css">
+<meta charset="UTF-8">
+<title>مرحباً بك</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="welcome.css">
 </head>
+
 <body>
 
-  <div class="welcome-container">
-    <img src="welcome.png" alt="Welcome Image">
+<!-- Loader -->
+<div id="loader"><div></div></div>
 
-    <h1>مرحباً بك 👋</h1>
-    <p>سعيدين بوجودك معنا، اضغط للدخول إلى الموقع</p>
+<!-- Overlay -->
+<div class="overlay"></div>
 
-    <button onclick="goHome()">دخول الموقع</button>
-  </div>
+<!-- Particles -->
+<canvas id="particles"></canvas>
 
-  <script>
-    function goHome() {
-      window.location.href = "home.html"; // الصفحة الرئيسية
-    }
-  </script>
+<!-- Content -->
+<div class="content">
+  <h1>مرحبا بك في  جمعية شوارق الأمل👋</h1>
+  <p>اضغط الزر للانتقال إلى الصفحة الرئيسية</p>
+  <button onclick="goHome()" onmouseenter="hoverSound()">الدخول إلى الموقع</button>
+</div>
+
+<!-- Sounds -->
+<audio id="clickSound" src="click.mp3"></audio>
+<audio id="hoverSound" src="hover.mp3"></audio>
+
+<script>
+/* ===== LOADER ===== */
+window.onload = () => {
+  document.getElementById("loader").style.display = "none";
+};
+
+/* ===== NAVIGATION ===== */
+function goHome() {
+  document.getElementById("clickSound").play();
+  setTimeout(()=>location.href="index.html",300);
+}
+function hoverSound(){
+  document.getElementById("hoverSound").play();
+}
+
+/* ===== PARALLAX ===== */
+document.addEventListener("mousemove", e=>{
+  const x = (e.clientX / window.innerWidth - 0.5) * 20;
+  const y = (e.clientY / window.innerHeight - 0.5) * 20;
+  document.body.style.backgroundPosition = `${50-x}% ${50-y}%`;
+});
+
+/* ===== PARTICLES ===== */
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+canvas.width = innerWidth;
+canvas.height = innerHeight;
+
+let particles = Array.from({length:60},()=>({
+  x: Math.random()*canvas.width,
+  y: Math.random()*canvas.height,
+  r: Math.random()*2+1,
+  dx: (Math.random()-0.5)*0.5,
+  dy: (Math.random()-0.5)*0.5
+}));
+
+function draw(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle="rgba(255,255,255,0.6)";
+  particles.forEach(p=>{
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fill();
+    p.x+=p.dx; p.y+=p.dy;
+    if(p.x<0||p.x>canvas.width) p.dx*=-1;
+    if(p.y<0||p.y>canvas.height) p.dy*=-1;
+  });
+  requestAnimationFrame(draw);
+}
+draw();
+</script>
 
 </body>
 </html>
