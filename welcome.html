@@ -1,85 +1,476 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<title>مرحباً بك</title>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="welcome.css">
-</head>
-
-<body>
-
-<!-- Loader -->
-<div id="loader"><div></div></div>
-
-<!-- Overlay -->
-<div class="overlay"></div>
-
-<!-- Particles -->
-<canvas id="particles"></canvas>
-
-<!-- Content -->
-<div class="content">
-  <h1>مرحبا بك في  جمعية شوارق الأمل👋</h1>
-  <p>اضغط الزر للانتقال إلى الصفحة الرئيسية</p>
-  <button onclick="goHome()" onmouseenter="hoverSound()">الدخول إلى الموقع</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>جمعية شوارق الأمل - الرئيسية</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+     <div class="logo">
+  <img src="New_folder/(1)  جمعية شوارق الأمل_20251022_063401_0000 .png" alt="شعار الجمعية" class="logo-img">
+  شوارق الأمل
 </div>
 
-<!-- Sounds -->
-<audio id="clickSound" src="click.mp3"></audio>
-<audio id="hoverSound" src="hover.mp3"></audio>
 
-<script>
-/* ===== LOADER ===== */
-window.onload = () => {
-  document.getElementById("loader").style.display = "none";
-};
+      <nav class="nav">
+        <div class="nav-item" >
+          <a href="#index">    <svg
+            width="24"
+            height="24"
+            viewBox="0 0 30 30"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M27.9167 30H20.4167C19.2658 30 18.3333 29.1392 18.3333 28.0769V21.1538C18.3333 20.3038 17.5875 19.6154 16.6667 19.6154H13.3333C12.4125 19.6154 11.6667 20.3038 11.6667 21.1538V28.0769C11.6667 29.1392 10.7342 30 9.58333 30H2.08333C0.9325 30 0 29.1392 0 28.0769V13.3946C0 11.6262 0.878334 9.95539 2.3825 8.86154L14.2258 0.246923C14.68 -0.0823077 15.32 -0.0823077 15.7733 0.246923L27.6183 8.86154C29.1225 9.95539 30 11.6254 30 13.3931V28.0769C30 29.1392 29.0675 30 27.9167 30Z"
+              fill="white"
+            />
+          </svg></a>
+      
+          <div class="tooltip">الرئيسية</div>
+        </div>
 
-/* ===== NAVIGATION ===== */
-function goHome() {
-  document.getElementById("clickSound").play();
-  setTimeout(()=>location.href="index.html",300);
-}
-function hoverSound(){
-  document.getElementById("hoverSound").play();
-}
+        <div class="nav-item" >
+          
+         
+          <a href="#about"> <svg width="24" height="24" viewBox="0 0 24 24">
+              
+            <path
+              d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12ZM4 20C4 16 8 14 12 14C16 14 20 16 20 20H4Z"
+              fill="white"
+            />
+          
+          </svg></a>
+          <div class="tooltip">من نحن</div>
+        </div>
 
-/* ===== PARALLAX ===== */
-document.addEventListener("mousemove", e=>{
-  const x = (e.clientX / window.innerWidth - 0.5) * 20;
-  const y = (e.clientY / window.innerHeight - 0.5) * 20;
-  document.body.style.backgroundPosition = `${50-x}% ${50-y}%`;
-});
+        <div class="nav-item" >
+          <a href="#activities"> <svg width="24" height="24" viewBox="0 0 24 24">
+            <path
+              d="M3 3H21V5H3V3ZM3 9H21V11H3V9ZM3 15H21V17H3V15ZM3 21H21V23H3V21Z"
+              fill="white"
+            />
+          </svg></a>
+         
+          <div class="tooltip">الأنشطة</div>
+        </div>
 
-/* ===== PARTICLES ===== */
-const canvas = document.getElementById("particles");
-const ctx = canvas.getContext("2d");
-canvas.width = innerWidth;
-canvas.height = innerHeight;
+        <div class="nav-item">
+          <a  href="#gallery">  <svg width="24" height="24" viewBox="0 0 24 24">
+            <path
+              d="M4 4H20V20H4V4ZM6 6V18H18V6H6ZM8 8H16V16H8V8Z"
+              fill="white"
+            />
+          </svg></a>
+        
+          <div class="tooltip">المعرض</div>
+        </div>
 
-let particles = Array.from({length:60},()=>({
-  x: Math.random()*canvas.width,
-  y: Math.random()*canvas.height,
-  r: Math.random()*2+1,
-  dx: (Math.random()-0.5)*0.5,
-  dy: (Math.random()-0.5)*0.5
-}));
+        <div class="nav-item" >
+          <a href="#contact"> <svg width="24" height="24" viewBox="0 0 24 24">
+            <path
+              d="M22.4672 19.4199C21.9377 19.1095 21.2868 19.116 20.7598 19.4291L18.0912 21.0191C17.4938 21.3751 16.7477 21.3334 16.1999 20.9056C15.2529 20.166 13.7282 18.9217 12.4016 17.5952C11.0751 16.2687 9.8308 14.7439 9.09124 13.7969C8.66342 13.2491 8.62168 12.503 8.97776 11.9057L10.5677 9.23697C10.8821 8.71002 10.8847 8.05394 10.5743 7.52438L6.65865 0.835732C6.27909 0.188781 5.52518 -0.129478 4.79606 0.0492166C4.0878 0.221389 3.16825 0.641386 2.20434 1.6066C-0.813896 4.62483 -2.41693 9.71567 8.93342 21.066C20.2838 32.4164 25.3733 30.8146 28.3928 27.7951C29.3593 26.8286 29.778 25.9077 29.9515 25.1982C30.1276 24.4703 29.8145 23.7216 29.1689 23.3434C27.5567 22.4004 24.0794 20.3643 22.4672 19.4199Z"
+              fill="white"
+            />
+          </svg></a>
+         
+          <div class="tooltip">تواصل معنا</div>
+        </div>
+      </nav>
+    </header>
 
-function draw(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  ctx.fillStyle="rgba(255,255,255,0.6)";
-  particles.forEach(p=>{
-    ctx.beginPath();
-    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-    ctx.fill();
-    p.x+=p.dx; p.y+=p.dy;
-    if(p.x<0||p.x>canvas.width) p.dx*=-1;
-    if(p.y<0||p.y>canvas.height) p.dy*=-1;
-  });
-  requestAnimationFrame(draw);
-}
-draw();
-</script>
+<!-- Hero Section -->
+<section class="hero" id="index">
+  <div class="hero-container">
+    <div class="hero-image-wrapper">
+      <img
+        src="New_folder/(1)  جمعية شوارق الأمل_20251022_063401_0000 .png"
+        alt="جمعية شوارق الأمل"
+        class="hero-image"
+      />
+    </div>
 
-</body>
+    <div class="hero-content">
+      <h1>نحو مجتمع أكثر وعياً وترابطاً</h1>
+      <p>
+        جمعية شبابية تأسست عام 2020 بهدف النهوض بالمجتمع من خلال العمل
+        الخيري، الثقافي، والاجتماعي. قدمت العديد من المبادرات، مثل: حملات
+        نظافة، إفطارات جماعية، دعم الطلاب المتفوقين، دورات تدريبية، أنشطة
+        ثقافية.
+      </p>
+      <a href="contact.html" class="btn-primary">ادعمنا الآن</a>
+    </div>
+  </div>
+</section>
+
+<!-- Latest Activities -->
+<section class="latest-activities">
+  <h2>أحدث أنشطتنا</h2>
+  <div class="activities-grid">
+    <div class="activity-card">
+      <img
+        src="New_folder/WhatsApp Image 2026-01-04 at 9.27.24 AM.jpeg"
+        alt="حملة نظافة"
+      />
+      <h3>حملة نظافة</h3>
+      <p>شاركنا في حملة تنظيف الحي وتحسين البيئة.</p>
+      <a href="#activities" class="btn-link">اقرأ المزيد</a>
+    </div>
+    <div class="activity-card">
+      <img
+        src="New_folder/WhatsApp Image 2026-01-04 at 9.27.25 AM.jpeg"
+        alt="دعم الطلاب المتفوقين"
+      />
+      <h3>دعم الطلاب المتفوقين</h3>
+      <p>تقديم منح للطلاب المتفوقين لدعم مسيرتهم التعليمية.</p>
+      <a href="#activities" class="btn-link">اقرأ المزيد</a>
+    </div>
+    <div class="activity-card">
+      <img
+        src="New_folder/WhatsApp Image 2026-01-04 at 9.27.23 AM.jpeg"
+        alt="إفطار جماعي"
+      />
+      <h3>إفطار جماعي</h3>
+      <p>تنظيم إفطارات جماعية للطلاب والمحتاجين.</p>
+      <a href="#activities" class="btn-link">اقرأ المزيد</a>
+    </div>
+  </div>
+</section>
+
+   
+    
+    <!-- من نحن -->
+    <section class="about-hero" id="about">
+  <div class="about-hero-container">
+    <div class="about-hero-image-wrapper">
+      <img
+        src="New_folder/WhatsApp Image 2026-01-04 at 9.27.36 AM.jpeg"
+        alt="جمعية شوارق الأمل"
+        class="about-hero-image"
+      />
+    </div>
+
+    <div class="about-hero-content">
+      <h1>جمعية شوارق الأمل</h1>
+      <p>
+        هي جمعية شبابية تطوعية تأسست في عام 2020، تهدف إلى بناء مجتمع أكثر وعياً وترابطاً من خلال مبادرات خيرية، ثقافية، واجتماعية. 
+        نشأت فكرتها من إيمان الشباب بدورهم في التغيير الإيجابي، وتحولت إلى كيان فعّال يخدم المجتمع بروح التعاون والمسؤولية.  
+        سعت الجمعية منذ تأسيسها إلى نشر قيم التطوع والعطاء، وقد نظمت وشاركت في العديد من الأنشطة المؤثرة، منها:
+      </p>
+      <ul>
+        <li>حملات النظافة العامة</li>
+        <li>إفطارات رمضانية جماعية</li>
+        <li>دعم الطلاب المتفوقين مادياً ومعنوياً</li>
+        <li>دورات تدريبية وتنموية</li>
+        <li>فعاليات ثقافية ومجتمعية</li>
+      </ul>
+      <p>
+        تؤمن "شوارق الأمل" أن التغيير يبدأ بخطوة، وأن الشباب هم وقود النهضة، لذا تواصل الجمعية العمل من أجل تمكين الأفراد وخدمة المجتمع برؤية واضحة وأهداف طموحة.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Vision – Mission Section -->
+   <section class="about-vision-section">
+  <h1 class="about-section-title">رؤيتنا • رسالتنا • أهدافنا</h1>
+
+  <div class="about-vision-cards">
+    <!-- بطاقة الرؤية -->
+    <div class="about-card">
+      <div class="about-icon">🌟</div>
+      <div class="about-activity-card">
+        <img src="New_folder/WhatsApp Image 2026-01-04 at 9.27.17 AM.jpeg" alt="رؤيتنا" />
+        <h2>رؤيتنا</h2>
+        <p>أن نكون نموذجاً رائداً في العمل التطوعي الشبابي، يسهم في بناء مجتمع متماسك، واعٍ، ومبادر نحو التنمية المستدامة.</p>
+      </div>
+    </div>
+
+    <!-- بطاقة الرسالة -->
+    <div class="about-card">
+      <div class="about-icon">💬</div>
+      <div class="about-activity-card">
+        <img src="New_folder/WhatsApp Image 2026-01-04 at 9.27.26 AM.jpeg" alt="رسالتنا" />
+        <h2>رسالتنا</h2>
+        <p>تمكين الشباب وتعزيز دورهم في خدمة المجتمع من خلال مبادرات تطوعية، ثقافية وتنموية مبتكرة تستجيب لاحتياجات المجتمع وتُحدث فرقاً حقيقياً.</p>
+      </div>
+    </div>
+
+    <!-- بطاقة الأهداف -->
+    <div class="about-card">
+      <div class="about-icon">🎯</div>
+      <div class="about-activity-card">
+        <img src="New_folder/WhatsApp Image 2026-01-04 at 9.27.22 AM.jpeg" alt="أهدافنا" />
+        <h2>أهدافنا</h2>
+        <ul>
+          <li>نشر ثقافة التطوع كقيمة مجتمعية فاعلة</li>
+          <li>اكتشاف طاقات الشباب وتوجيهها نحو العمل الإيجابي</li>
+          <li>تنفيذ مبادرات نوعية تلامس احتياجات المجتمع</li>
+          <li>دعم التعليم والتميز الأكاديمي</li>
+          <li>تعزيز الوعي الثقافي والاجتماعي</li>
+          <li>بناء شراكات فاعلة مع الجهات والمؤسسات ذات الصلة</li>
+          <li>تحقيق أثر مجتمعي مستدام عبر برامج مستمرة</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+   
+<!-- النشاطات -->
+<section class="activities-hero" id="activities">
+  <div class="activities-hero-container">
+    <div class="activities-hero-image-wrapper">
+      <img
+        src="New_folder/WhatsApp Image 2026-01-03 at 8.04.26 PM (1).jpeg"
+        alt="جمعية شوارق الأمل"
+        class="activities-hero-image"
+      />
+    </div>
+
+    <div class="activities-hero-content">
+      <h1>الأنشطة التطوعية</h1>
+      <p>تعرف على جميع الأنشطة التي نفذتها الجمعية لمجتمعنا.</p>
+      <a href="#activities-grid" class="btn-primary">شاهد الأنشطة</a>
+    </div>
+  </div>
+</section>
+
+<section class="activities-activities-grid" id="activities-grid">
+  <!-- بطاقة النشاط 1 -->
+  <div class="activities-activity-card">
+    <img src="New_folder/WhatsApp Image 2026-01-04 at 9.27.24 AM.jpeg" alt="حملة نظافة">
+    <h3>حملة نظافة</h3>
+    <p>أن النظافة مسؤوليتنا.. ووجه مدينتنا يعكس وعينا.</p>
+    <a href="#" class="btn-link">اقرأ المزيد</a>
+  </div>
+
+  <!-- بطاقة النشاط 2 -->
+  <div class="activities-activity-card">
+    <img src="New_folder/WhatsApp Image 2026-01-04 at 9.27.22 AM (1).jpeg" alt="إفطار جماعي">
+    <h3>إفطار جماعي</h3>
+    <p>تعزيز قيم الترابط الاجتماعي وروح العطاء في رمضان.</p>
+    <a href="#" class="btn-link">اقرأ المزيد</a>
+  </div>
+
+  <!-- بطاقة النشاط 3 -->
+  <div class="activities-activity-card">
+    <img src="New_folder/WhatsApp Image 2026-01-04 at 9.27.17 AM.jpeg" alt="دورات تدريبية">
+    <h3>دورات تدريبية</h3>
+    <p>سلسلة دورات مجانية لتطوير المهارات وتمكين الشباب والمرأة.</p>
+    <a href="#" class="btn-link">اقرأ المزيد</a>
+  </div>
+
+  <!-- بطاقة النشاط 4 -->
+  <div class="activities-activity-card">
+    <img src="New_folder/WhatsApp Image 2026-01-04 at 9.27.26 AM (1).jpeg" alt="كيس الصائم">
+    <h3>كيس الصائم</h3>
+    <p>دعم الأسر المتعففة وتوفير احتياجاتها الأساسية خلال رمضان.</p>
+    <a href="#" class="btn-link">اقرأ المزيد</a>
+  </div>
+
+  <!-- بطاقة النشاط 5 -->
+  <div class="activities-activity-card">
+    <img src="New_folder/WhatsApp Image 2026-01-04 at 9.27.17 AM (1).jpeg" alt="تكريم المتفوقين">
+    <h3>تكريم المتفوقين</h3>
+    <p>الاحتفاء بالطلاب المتميزين ودعمهم للاستمرار في التفوق.</p>
+    <a href="#" class="btn-link">اقرأ المزيد</a>
+  </div>
+
+  <!-- بطاقة النشاط 6 -->
+  <div class="activities-activity-card">
+    <img src="New_folder/WhatsApp Image 2026-01-04 at 9.27.18 AM.jpeg" alt="مبادرة دفء وأمان">
+    <h3>مبادرة دفء وأمان</h3>
+    <p>توزيع مواد الإغاثة الشتوية للأسر الأكثر احتياجًا.</p>
+    <a href="#" class="btn-link">اقرأ المزيد</a>
+  </div>
+
+  <!-- بطاقة النشاط 7 -->
+  <div class="activities-activity-card">
+    <img src="New_folder/WhatsApp Image 2026-01-03 at 7.38.46 PM.jpeg" alt="إغاثة اهل الفاشر">
+    <h3>إغاثة أهل الفاشر</h3>
+    <p>توصيل الدعم العاجل للمتضررين من النزوح ونقص الغذاء والدواء.</p>
+    <a href="#" class="btn-link">اقرأ المزيد</a>
+  </div>
+</section>
+
+
+
+<!-- الاستوري-->
+
+  <!-- Buttons -->
+ 
+  <nav class="filter-bar" id="gallery">
+    <button id="btnImages" class="filter-btn active" onclick="showImages()">الصور</button>
+    <button id="btnVideos" class="filter-btn" onclick="showVideos()">الفيديوهات</button>
+  </nav>
+
+  <!-- Hero -->
+  <section class="gallery-hero">
+    <h1>معرض الوسائط</h1>
+    <p>اختر نوع العرض</p>
+  </section>
+
+  <!-- Media Grid -->
+  <section class="media-grid">
+
+    <!-- صور -->
+    <div class="media-card media-image">
+      <img src="New_folder/WhatsApp Image 2026-01-03 at 7.38.46 PM.jpeg">
+    </div>
+
+    <div class="media-card media-image">
+      <img src="New_folder/WhatsApp Image 2026-01-04 at 9.27.28 AM.jpeg">
+    </div>
+
+    <div class="media-card media-image">
+      <img src="New_folder/WhatsApp Image 2026-01-04 at 9.27.25 AM.jpeg">
+    </div>
+
+    
+      <div class="media-card media-image">
+      <img src="New_folder/WhatsApp Image 2026-01-04 at 9.27.26 AM (1).jpeg">
+    </div>
+
+    <div class="media-card media-image">
+      <img src="New_folder/WhatsApp Image 2026-01-04 at 9.27.24 AM (1).jpeg">
+    </div>
+
+    <div class="media-card media-image">
+      <img src="New_folder/WhatsApp Image 2026-01-04 at 9.27.23 AM.jpeg">
+    </div>
+
+    <div class="media-card media-image">
+      <img src="New_folder/WhatsApp Image 2026-01-04 at 9.27.22 AM.jpeg">
+    </div>
+
+    <div class="media-card media-image">
+      <img src="New_folder/WhatsApp Image 2026-01-04 at 9.27.22 AM (1).jpeg">
+    </div>
+
+    <div class="media-card media-image">
+      <img src="New_folder/WhatsApp Image 2026-01-04 at 9.27.21 AM.jpeg">
+    </div>
+
+    <div class="media-card media-image">
+      <img src="New_folder/WhatsApp Image 2026-01-04 at 9.27.20 AM.jpeg">
+    </div>
+
+    <div class="media-card media-image">
+      <img src="New_folder/WhatsApp Image 2026-01-04 at 9.27.20 AM.jpeg">
+    </div>
+
+    <div class="media-card media-image">
+      <img src="New_folder/WhatsApp Image 2026-01-03 at 7.38.46 PM.jpeg">
+    </div>
+
+    <div class="media-card media-image">
+      <img src="New_folder/WhatsApp Image 2026-01-03 at 7.46.47 PM.jpeg">
+    </div>
+
+    <div class="media-card media-image">
+      <img src="New_folder/WhatsApp Image 2026-01-03 at 7.47.45 PM.jpeg">
+    </div>
+
+    <div class="media-card media-image">
+      <img src="New_folder/WhatsApp Image 2026-01-03 at 7.47.50 PM.jpeg">
+    </div>
+
+    </var>
+
+    </div>
+    <!-- فيديوهات -->
+    <div class="media-card media-video">
+      <video src="New_folder/lv_7562555353297145141_٢٠٢٥١٠٢٨٠٧٥٠٢١.mp4" controls></video>
+    </div>
+
+    <div class="media-card media-video">
+      <video src="New_folder/WhatsApp Video 2026-01-04 at 6.52.28 PM.mp4" controls></video>
+    </div>
+
+  </section>
+
+<!--التواصل  -->
+<div class="contact">
+  <section class="contact-hero" id="contact">
+  <h1>تواصل معنا</h1>
+  <p>نرحب باستفساراتكم وملاحظاتكم، تواصل معنا الآن!</p>
+</section>
+
+<section class="contact-form-section">
+  <div class="contact-container">
+    <form id="bookingForm" action="backend/save_message.php" method="post">
+      <label>الاسم الكامل</label>
+        <input type="text" id="name" placeholder="أسمك" required />
+        <label>البريد الإلكتروني</label>
+        <input type="email" id="email" placeholder="بريدك" required />
+      <label>الرسالة:</label>
+      <textarea id="notes" rows="4" placeholder="ملاحظاتك..."></textarea>
+      <button type="submit" class="contact-btn-submit">إرسال</button>
+    </form>
+
+    <div class="carr">
+  <a href="https://tiktok.com/@shawariqalamal24" class="socialContainer containerOne">
+     <svg
+      class="socialSvg tiktokSvg largeIcon"
+      viewBox="0 0 48 48"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <title>Tiktok</title>
+      <g
+        id="Icon/Social/tiktok-white"
+        stroke="none"
+        stroke-width="1"
+        fill="none"
+        fill-rule="evenodd"
+      >
+        <path
+          d="M38.0766847,15.8542954 C36.0693906,15.7935177 34.2504839,14.8341149 32.8791434,13.5466056 C32.1316475,12.8317108 31.540171,11.9694126 31.1415066,11.0151329 C30.7426093,10.0603874 30.5453728,9.03391952 30.5619062,8 L24.9731521,8 L24.9731521,28.8295196 C24.9731521,32.3434487 22.8773693,34.4182737 20.2765028,34.4182737 C19.6505623,34.4320127 19.0283477,34.3209362 18.4461858,34.0908659 C17.8640239,33.8612612 17.3337909,33.5175528 16.8862248,33.0797671 C16.4386588,32.6422142 16.0833071,32.1196657 15.8404292,31.5426268 C15.5977841,30.9658208 15.4727358,30.3459348 15.4727358,29.7202272 C15.4727358,29.0940539 15.5977841,28.4746337 15.8404292,27.8978277 C16.0833071,27.3207888 16.4386588,26.7980074 16.8862248,26.3604545 C17.3337909,25.9229017 17.8640239,25.5791933 18.4461858,25.3491229 C19.0283477,25.1192854 19.6505623,25.0084418 20.2765028,25.0219479 C20.7939283,25.0263724 21.3069293,25.1167239 21.794781,25.2902081 L21.794781,19.5985278 C21.2957518,19.4900128 20.7869423,19.436221 20.2765028,19.4380839 C18.2431278,19.4392483 16.2560928,20.0426009 14.5659604,21.1729264 C12.875828,22.303019 11.5587449,23.9090873 10.7814424,25.7878401 C10.003907,27.666593 9.80084889,29.7339663 10.1981162,31.7275214 C10.5953834,33.7217752 11.5748126,35.5530237 13.0129853,36.9904978 C14.4509252,38.4277391 16.2828722,39.4064696 18.277126,39.8028054 C20.2711469,40.1991413 22.3382874,39.9951517 24.2163416,39.2169177 C26.0948616,38.4384508 27.7002312,37.1209021 28.8296253,35.4300711 C29.9592522,33.7397058 30.5619062,31.7522051 30.5619062,29.7188301 L30.5619062,18.8324027 C32.7275484,20.3418321 35.3149087,21.0404263 38.0766847,21.0867664 L38.0766847,15.8542954 Z"
+          id="Fill-1"
+          fill="#FFFFFF"
+        ></path>
+      </g>
+    </svg>
+  </a>
+
+  
+
+  <a href="https://www.facebook.com/profile.php?id=61552616428390" class="socialContainer containerThree">
+    <svg class="socialSvg linkdinSvg" viewBox="0 0 448 512">
+      <path
+        d="M81.703,165.106h33.981V305c0,2.762,2.238,5,5,5h57.616c2.762,0,5-2.238,5-5V165.765h39.064
+    c2.54,0,4.677-1.906,4.967-4.429l5.933-51.502c0.163-1.417-0.286-2.836-1.234-3.899c-0.949-1.064-2.307-1.673-3.732-1.673h-44.996
+    V71.978c0-9.732,5.24-14.667,15.576-14.667c1.473,0,29.42,0,29.42,0c2.762,0,5-2.239,5-5V5.037c0-2.762-2.238-5-5-5h-40.545
+    C187.467,0.023,186.832,0,185.896,0c-7.035,0-31.488,1.381-50.804,19.151c-21.402,19.692-18.427,43.27-17.716,47.358v37.752H81.703
+    c-2.762,0-5,2.238-5,5v50.844C76.703,162.867,78.941,165.106,81.703,165.106z"
+      ></path>
+    </svg>
+  </a>
+
+  <a href="https://whatsapp.com/channel/0029VaNQwzV9Bb5s2lpsba3G" class="socialContainer containerFour">
+    <svg class="socialSvg whatsappSvg" viewBox="0 0 16 16">
+      <path
+        d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"
+      ></path>
+    </svg>
+  </a>
+</div>
+</section>
+</div>
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2025 جمعية شوارق الأمل</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
