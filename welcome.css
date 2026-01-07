@@ -68,11 +68,11 @@ canvas {
 }
 
 .content h1 {
-  font-size: 28px;
+  font-size: 70px;
   margin-bottom: 10px;
 }
 .content p {
-  font-size: 15px;
+  font-size: 70px;
   margin-bottom: 25px;
 }
 
@@ -82,7 +82,7 @@ canvas {
   border: none;
   padding: 14px 35px;
   border-radius: 30px;
-  font-size: 16px;
+  font-size: 60px;
   color: #fff;
   cursor: pointer;
   box-shadow: 0 0 25px rgba(255, 0, 98, 0.7);
@@ -106,5 +106,19 @@ canvas {
   }
   .content h1 {
     font-size: 22px;
+  }
+}
+
+/* موبايل */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* تابلت */
+@media (max-width: 900px) {
+  body {
+    font-size: 16px;
   }
 }

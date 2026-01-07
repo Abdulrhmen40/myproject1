@@ -25,7 +25,7 @@ function showVideos() {
           let email = document.getElementById("email").value;
            let notes = document.getElementById("notes").value;
 
-          let message = `مرحبا عبدالرحمن,%0Aلدي طلب حجز:%0A- الاسم: ${name}%0A- البريد: ${email}%0A- ملاحظات: ${notes}`;
+          let message = `مرحبا شوارق الأمل,%0Aلدي طلب حجز:%0A- الاسم: ${name}%0A- البريد: ${email}%0A- ملاحظات: ${notes}`;
 
           // الرقم الذي وضعته: 0128467955
           let whatsappURL = `https://wa.me/249995255549?text=${message}`;
@@ -33,3 +33,17 @@ function showVideos() {
 
           this.reset();
         });
+
+    
+function toggleMore(btn) {
+  const moreText = btn.nextElementSibling;
+
+  if (moreText.style.display === "none" || moreText.style.display === "") {
+    moreText.style.display = "block";
+    btn.textContent = "إخفاء";
+  } else {
+    moreText.style.display = "none";
+    btn.textContent = "اقرأ المزيد";
+  }
+}
+
