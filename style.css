@@ -639,11 +639,7 @@ body {
 }
 
 .activities-activity-card 
-.activities-activity-card1
-.activities-activity-card2
-.activities-activity-card3
-.activities-activity-card4
-.activities-activity-card5{
+{
   background: white;
   border-radius: 20px;
   overflow: hidden;
@@ -653,21 +649,13 @@ body {
 }
 
 .activities-activity-card:hover 
-.activities-activity-card1:hover
-.activities-activity-card2:hover
-.activities-activity-card3:hover
-.activities-activity-card4:hover
-.activities-activity-card5:hover{
+{
   transform: translateY(-10px);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
 }
 
 .activities-activity-card img 
-.activities-activity-card1 img 
-.activities-activity-card2 img 
-.activities-activity-card3 img 
-.activities-activity-card4 img 
-.activities-activity-card5 img {
+ {
   width: 100%;
   height: 200px;
   object-fit: cover;
@@ -675,31 +663,19 @@ body {
 }
 
 .activities-activity-card img:hover 
-.activities-activity-card1 img:hover
-.activities-activity-card2 img:hover
-.activities-activity-card3 img:hover
-.activities-activity-card4 img:hover
-.activities-activity-card5 img:hover{
+{
   transform: scale(1.05);
 }
 
 .activities-activity-card h3 
-.activities-activity-card1 h3
-.activities-activity-card2 h3
-.activities-activity-card3 h3
-.activities-activity-card4 h3
-.activities-activity-card5 h3{
+{
   font-size: 22px;
   margin: 15px 10px 10px;
   color: #0b42f8;
 }
 
 .activities-activity-card p 
-.activities-activity-card1 p 
-.activities-activity-card2 p
-.activities-activity-card3 p
-.activities-activity-card4 p
-.activities-activity-card5 p{
+{
   padding: 0 15px 15px;
   color: #555;
   font-size: 16px;
@@ -707,11 +683,7 @@ body {
 }
 
 .activities-activity-card .btn-link 
-.activities-activity-card1 .btn-link
-.activities-activity-card2 .btn-link
-.activities-activity-card3 .btn-link
-.activities-activity-card4 .btn-link
-.activities-activity-card5 .btn-link{
+{
   display: inline-block;
   margin: 0 15px;
   color: #0b74da;
@@ -722,11 +694,7 @@ body {
 }
 
 .activities-activity-card .btn-link:hover 
-.activities-activity-card1 .btn-link:hover 
-.activities-activity-card2 .btn-link:hover 
-.activities-activity-card3 .btn-link:hover 
-.activities-activity-card4 .btn-link:hover 
-.activities-activity-card5 .btn-link:hover {
+ {
   color: #094bb0;
   text-decoration: underline;
 }
@@ -1188,5 +1156,96 @@ body {
 @media (max-width: 900px) {
   body {
     font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 12px 15px;
+  }
+
+  .nav {
+    gap: 10px;
+  }
+
+  .nav-item svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .tooltip {
+    display: none; /* tooltips مزعجة في الموبايل */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 120px 15px 60px;
+    background-attachment: scroll; /* مهم جدًا للموبايل */
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .btn-primary {
+    font-size: 16px;
+    padding: 12px 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .activities-activities-grid {
+    padding: 40px 15px;
+    gap: 18px;
+  }
+
+  .activities-activity-card h3 {
+    font-size: 18px;
+  }
+
+  .activities-activity-card p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero,
+  .activities-hero {
+    padding: 120px 15px 60px;
+    background-attachment: scroll;
+  }
+
+  .about-hero-content h1,
+  .activities-hero-content h1 {
+    font-size: 30px;
+  }
+
+  .about-hero-content p,
+  .activities-hero-content p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-container form {
+    padding: 20px;
+  }
+
+  .contact-btn-submit {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .media-card img,
+  .media-card video,
+  .media-card iframe {
+    height: 160px;
   }
 }
