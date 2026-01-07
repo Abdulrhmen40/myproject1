@@ -190,10 +190,12 @@ body {
 }
 
 .hero-content p {
-  font-size: 20px;
+  font-size: 30px;
   color: #333;
   line-height: 1.8;
   margin-bottom: 30px;
+  font-weight: 900; /* أكثر غمقًا */
+
 }
 
 /* Hero Button */
@@ -270,10 +272,10 @@ body {
 }
 
 .activity-card p {
-  font-size: 16px;
-  color: #555;
-  margin-bottom: 15px;
-  padding: 0 15px;
+  font-size: 20px;
+  color: #0f1112;
+  margin-bottom: 30px;
+ 
 }
 
 .btn-link {
@@ -372,10 +374,11 @@ body {
 }
 
 .about-hero-content p {
-  font-size: 18px;
+  font-size: 30px;
   color: #333;
   line-height: 2;
   margin-bottom: 20px;
+  font-weight: 900;
 }
 
 .about-hero-content ul {
@@ -383,7 +386,8 @@ body {
   padding-right: 20px;
   margin-bottom: 20px;
   font-size: 18px;
-  color: #555;
+  color: #301ad4;
+  font-weight: 900;
 }
 
 .about-hero-content ul li {
@@ -507,11 +511,12 @@ body {
 
 .about-activity-card p,
 .about-activity-card ul {
-  font-size: 18px;
+  font-size: 20px;
   color: #333;
   line-height: 1.8;
   text-align: right;
   padding: 0 20px 20px;
+  font-weight: 900;
 }
 
 .about-activity-card ul {
@@ -608,10 +613,11 @@ body {
 }
 
 .activities-hero-content p {
-  font-size: 20px;
+  font-size: 40px;
   color: #333;
   line-height: 2;
   margin-bottom: 20px;
+  font-weight: 900;
 }
 
 .activities-hero-content .btn-primary {
@@ -677,9 +683,10 @@ body {
 .activities-activity-card p 
 {
   padding: 0 15px 15px;
-  color: #555;
-  font-size: 16px;
+  color: #040404;
+  font-size: 20px;
   line-height: 1.8;
+  font-weight: 900;
 }
 
 .activities-activity-card .btn-link 
@@ -1002,6 +1009,7 @@ body {
 .gallery-hero p {
   font-size: 20px;
   color: #555;
+  font-weight: 900;
 }
 
 /* ==================== Media Grid ==================== */
