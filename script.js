@@ -41,7 +41,7 @@ document.getElementById("bookingForm").addEventListener("submit", function (e) {
     `- ملاحظات: ${notes}`;
 
   let mailURL =
-    `mailto:shawariqalamal@gmail.com` +
+    `mailto:shoariqalamal@gmail.com` +
     `?subject=${encodeURIComponent(subject)}` +
     `&body=${encodeURIComponent(message)}`;
 
